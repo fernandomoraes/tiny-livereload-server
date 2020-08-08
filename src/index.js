@@ -1,3 +1,5 @@
+#! /usr/bin/env node
+
 const path = require('path');
 const es = require('event-stream');
 
@@ -58,7 +60,7 @@ function startServer() {
         send(req, filePath)
             .on('stream', (stream) => {
                 if (injectLiveReload) {
-                    injectLiveReloadFragment(stream);
+                    injectLiveReloadFragment(stream, res);
                 }
             })
             .pipe(res);
@@ -68,12 +70,12 @@ function startServer() {
         .addListener('upgrade', (req, socket, head) =>
             ws.handleUpgrade(req, socket, head, (connection) => liveReloadWsConnections.push(connection))
         )
-        .addListener('listening', () => console.log('server running...'))
+        .addListener('listening', () => console.log(`server running on http://localhost:${SERVER_PORT} ...`))
         .addListener('listening', () => open(`http://localhost:${SERVER_PORT}`))
         .listen(SERVER_PORT);
 }
 
-function injectLiveReloadFragment(stream) {
+function injectLiveReloadFragment(stream, res) {
     const newContentLength = res.getHeader('content-length') + LIVERELOAD_FRAGMENT.length;
     res.setHeader('content-length', newContentLength);
 

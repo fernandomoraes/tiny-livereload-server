@@ -1,5 +1,5 @@
 {
-  "name": "tiny-livereload",
+  "name": "@moraes/tiny-livereload-server",
   "version": "1.0.0",
   "description": "tiny web live reload",
   "main": "src/index.js",
@@ -7,11 +7,12 @@
   "author": "Fernando Moraes <fernandosdemoraes@gmail.com>",
   "license": "MIT",
   "private": false,
+  "bin": "src/index.js",
   "dependencies": {
     "chokidar": "^3.4.2",
     "event-stream": "^4.0.1",
     "open": "^7.1.0",
     "send": "^0.17.1",
-    "ws": "^7.3.1"
+    "ws": "^7.3.1"  
   }
 }
