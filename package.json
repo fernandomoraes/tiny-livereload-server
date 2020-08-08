@@ -1,0 +1,17 @@
+{
+  "name": "tiny-livereload",
+  "version": "1.0.0",
+  "description": "tiny web live reload",
+  "main": "src/index.js",
+  "repository": "git@github.com:fernandomoraes/tiny-livereload.git",
+  "author": "Fernando Moraes <fernandosdemoraes@gmail.com>",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "chokidar": "^3.4.2",
+    "event-stream": "^4.0.1",
+    "open": "^7.1.0",
+    "send": "^0.17.1",
+    "ws": "^7.3.1"
+  }
+}
