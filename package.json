@@ -8,6 +8,10 @@
   "license": "MIT",
   "private": false,
   "bin": "src/index.js",
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
+  },
   "dependencies": {
     "chokidar": "^3.4.2",
     "event-stream": "^4.0.1",
