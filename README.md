@@ -8,3 +8,15 @@ There is only one rule, there is no configuration
 
 * css livereload without full reload
 * auto open browser
+
+## Install
+
+```
+npm install -g @moraes/tiny-livereload-server
+```
+
+inside project`s root:
+
+```
+tiny-livereload-server
+``` 
