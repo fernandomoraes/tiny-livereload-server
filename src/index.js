@@ -10,11 +10,15 @@ const send = require('send');
 const open = require('open');
 const chokidar = require('chokidar');
 
+const argv = require('minimist')(process.argv.slice(2));
+
 const ws = new WebSocket.Server({ noServer: true });
 const liveReloadWsConnections = [];
 const SERVER_PORT = 3027;
 
 const LIVERELOAD_INJECT_TAG = '</head>';
+
+const cwd = argv.cwd ? `${process.cwd()}/${argv.cwd}` : process.cwd();
 
 const LIVERELOAD_FRAGMENT = `
 <script>
@@ -41,7 +45,7 @@ function startWatcher() {
         ignoreInitial: true
     };
 
-    const watcher = chokidar.watch(process.cwd(), options);
+    const watcher = chokidar.watch(cwd, options);
 
     watcher.on('all', (event, pathFile) => {
         const isCss = path.extname(pathFile) === '.css';
@@ -53,7 +57,7 @@ function startWatcher() {
 function startServer() {
     const server = http.createServer((req, res) => {
         const safeRequestPath = path.normalize(req.url).replace(/^(\.\.[\/\\])+/, '');
-        const filePath = path.join(process.cwd(), safeRequestPath);
+        const filePath = path.join(cwd, safeRequestPath);
 
         const injectLiveReload = ['', 'html'].indexOf(path.extname(filePath)) > -1;
 

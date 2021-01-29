@@ -15,8 +15,17 @@ There is only one rule, there is no configuration
 npm install -g @moraes/tiny-livereload-server
 ```
 
-inside project`s root:
+Inside project`s root:
 
 ```
 tiny-livereload-server
 ``` 
+
+## Parameters
+
+The following parameters can be used:
+
+```
+tiny-livereload-server \
+    cwd src
+```
