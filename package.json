@@ -1,6 +1,6 @@
 {
   "name": "@moraes/tiny-livereload-server",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "tiny web live reload",
   "main": "src/index.js",
   "repository": "git@github.com:fernandomoraes/tiny-livereload.git",
@@ -15,8 +15,9 @@
   "dependencies": {
     "chokidar": "^3.4.2",
     "event-stream": "^4.0.1",
+    "minimist": "^1.2.5",
     "open": "^7.1.0",
     "send": "^0.17.1",
-    "ws": "^7.3.1"  
+    "ws": "^7.3.1"
   }
 }
