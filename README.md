@@ -27,5 +27,5 @@ The following parameters can be used:
 
 ```
 tiny-livereload-server \
-    cwd src
+    --cwd src
 ```
