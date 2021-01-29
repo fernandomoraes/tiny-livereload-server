@@ -1,6 +1,6 @@
 {
   "name": "@moraes/tiny-livereload-server",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "description": "tiny web live reload",
   "main": "src/index.js",
   "repository": "git@github.com:fernandomoraes/tiny-livereload.git",
